@@ -344,6 +344,12 @@ header .row {
   margin: 32px 0;
 }
 
+.row__narrow {
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
 /* 
 
 FEATURES ↓
@@ -426,7 +432,7 @@ FEATURES ↓
   font-size: 48px;
   font-weight: 900;
   color: rgb(36, 62, 99);
-  line-height: 1.5;
+  line-height: 1.25;
   margin: 16px 0;
   letter-spacing: 0.025em;
 }
@@ -767,6 +773,12 @@ PRICING ↓
   padding: 2rem;
 }
 
+.plan:nth-child(1) .plan__middle,
+.plan:nth-child(3) .plan__middle {
+  border-top: 2px solid rgb(229, 231, 235);
+  border-bottom: 2px solid rgb(229, 231, 235);
+}
+
 .plan__target {
   font-size: 20px;
   font-weight: 700;
@@ -831,6 +843,11 @@ TESTIMONIALS ↓
 
 #testimonials .row {
   display: flex;
+}
+
+#testimonials .section__title {
+  margin-bottom: 24px;
+  line-height: 1.25;
 }
 
 .testimonial {
@@ -1193,7 +1210,9 @@ footer {
 
 /* 
 
-MOBILE RESPONSIVENESS ↓
+MOBILE RESPONSIVENESS ↓ 
+
+1280px ↓
 
 */
 
@@ -1201,11 +1220,92 @@ MOBILE RESPONSIVENESS ↓
   header .row {
     align-items: flex-end;
   }
+
+  h1 {
+    font-size: 36px;
+    color: #1a202c;
+    line-height: 1.25;
+  }
+
+  .header__description--para {
+    font-size: 16px;
+  }
+
+  .header__img--wrapper {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .header__img {
+    max-width: 512px;
+  }
+
+  .header__customers {
+    padding-right: 64px;
+  }
+
+  .testimonials__img {
+    width: 40%;
+  }
+
+  .testimonials__description {
+    width: calc(100% - 40%);
+  }
 }
 
+/* 
+
+1024px ↓
+
+*/
+
 @media (max-width: 1024px) {
+  .nav__links {
+    display: none;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
   .btn__menu {
     display: block;
+  }
+
+  .section__para {
+    font-size: 14px;
+    font-weight: 500;
+    color: #7c8ba1;
+    line-height: 1.625;
+    text-align: left;
+  }
+
+  .section__tag {
+    text-align: center;
+  }
+
+  .section__title {
+    text-align: left;
+    font-size: 36px;
+    line-height: 1.25;
+    margin: 16px 0;
+  }
+
+  .header__customers--title {
+    margin-bottom: 8px;
+  }
+
+  .header__customers {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    padding-right: 0;
+    margin: 16px auto 0;
+  }
+
+  .header__description--para {
+    font-size: 16px;
+    margin: 24px 0;
   }
 
   header .row {
@@ -1220,10 +1320,90 @@ MOBILE RESPONSIVENESS ↓
     align-items: center;
   }
 
+  .header__description,
+  .header__img--wrapper {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .header__description {
+    text-align: center;
+  }
+
+  .header__img--wrapper,
+  .header__customers--title {
+    margin-top: 48px;
+  }
+
+  .header__customers {
+    padding-right: 0px;
+  }
+
+  .features {
+    max-width: 768px;
+  }
+
+  .feature {
+    width: calc(50%);
+  }
+
+  .quality__description {
+    margin-right: 0px;
+    padding-right: 48px;
+  }
+
+  #quality .section__tag,
+  #steps .section__tag,
+  #values .section__tag,
+  #testimonials .section__tag {
+    text-align: left;
+  }
+
+  .plans {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .plan {
+    width: 100%;
+    max-width: 384px;
+    margin-right: 0px;
+  }
+
+  .testimonials__description {
+    padding-left: 48px;
+    text-align: left;
+  }
+
+  .start__row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .start__title {
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+  }
+
+  .start__buttons {
+    width: 100%;
+    justify-content: center;
+    padding-top: 24px;
+  }
+
   footer {
     padding: 80px 32px;
   }
 }
+
+/* 
+
+768px ↓
+
+*/
 
 @media (max-width: 768px) {
   h1 {
@@ -1410,13 +1590,48 @@ MOBILE RESPONSIVENESS ↓
     padding-left: 0px;
   }
 
-  .start__title,
   .start__row {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .start__title {
     width: 100%;
+    max-width: 500px;
+    text-align: center;
+  }
+
+  .start__buttons {
+    width: 100%;
+    justify-content: center;
+    padding-top: 24px;
+  }
+
+  .footer__columns {
+    justify-content: flex-start;
+  }
+
+  .footer__column {
+    width: calc(100% / 3);
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer__copyright,
+  .footer__socials {
+    margin-top: 32px;
   }
 }
+
+/* 
+
+640px ↓
+
+*/
 
 @media (max-width: 640px) {
   .container {
@@ -1459,5 +1674,12 @@ MOBILE RESPONSIVENESS ↓
     height: auto;
     margin: 12px 0 0;
     padding: 16px;
+  }
+
+  .header__customers {
+    display: block;
+    width: 100%;
+    padding-right: 0;
+    margin: 16px auto 0;
   }
 }
